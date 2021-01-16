@@ -1,5 +1,5 @@
 # skeleplate
-A skeleton template to jumpstart a static or single page web application, this includes the most commonly used front-end tools to date.
+A skeleton template to jumpstart a static or single page web application, this include the most commonly used front-end tools to date.
 
 ## Synopsis
 Most templates commonly found on the internet, have alot of power behind their structure and yet lack the documentation to do so for new developer. 
