@@ -1,0 +1,39 @@
+{
+  "name": "skelplate",
+  "version": "1.0.0",
+  "description": "A skeleton template to jumpstart a static or single page web application, this include the most commonly used front-end tools to date.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "run-p compile:sass compile:pug",
+    "compile:sass": "sass htdocs/src/scss/style.scss htdocs/build/assets/style.css --watch --color",
+    "compile:pug": "pug htdocs/src/pug  --out htdocs/build/ --watch --pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkCalderon/skelplate.git"
+  },
+  "sass": {
+    "includePaths": [
+      "./node_modules"
+    ]
+  },
+  "keywords": [
+    "Template",
+    "Skeleton",
+    "Jumpstart",
+    "Development",
+    "Tools"
+  ],
+  "author": "Mark Angeo Calderon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkCalderon/skelplate/issues"
+  },
+  "homepage": "https://github.com/MarkCalderon/skelplate#readme",
+  "dependencies": {
+    "normalize.scss": "^0.1.0",
+    "npm-run-all": "^4.1.5",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.32.4"
+  }
+}

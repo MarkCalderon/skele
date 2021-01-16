@@ -19,3 +19,13 @@ New developer, Tech hobbyist or Junior Developers striving to enter the competit
 - ESLint
 - Beautifier
 - Environment specific configuration
+
+
+## Package used:
+1. Normalize.css
+https://necolas.github.io/normalize.css/
+- Resets the css
+
+2. SASS 
+https://sass-lang.com/install
+- Compiles SASS to CSS
