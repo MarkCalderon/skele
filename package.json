@@ -4,12 +4,19 @@
   "description": "A skeleton template to jumpstart a static or single page web application, this include the most commonly used front-end tools to date.",
   "main": "index.js",
   "scripts": {
-    "compile:all": "run-p compile:sass compile:pug",
-    "compile:sass": "sass htdocs/src/scss/style.scss htdocs/build/assets/style.css --watch --color",
+    "notify:scss": "notify -t \"Compiler:\" -m \"SCSS has been successfully compiled.\"",
+    "notify:js": "notify -t \"Compiler:\" -m \"JS has been successfully compiled.\"",
+    "notify:pug": "notify -t \"Compiler:\" -m \"PUG has been successfully compiled.\"",
+    "load:assets": "run-p compile:all watch:style",
+    "compile:all": "run-p compile:sass compile:pug compile:js",
+    "compile:sass": "sass htdocs/src/scss/style.scss htdocs/build/assets/css/style.css --watch --color --source-map",
+    "prefix:style": "postcss htdocs/build/assets/css/style.css -u autoprefixer -u cssnano -r",
+    "watch:style": "chokidar --silent \"htdocs/src/scss/**/*.scss\" -c \"run-s prefix:style lint:style",
     "compile:pug": "pug htdocs/src/pug  --out htdocs/build/ --watch --pretty",
+    "compile:js": "webpack --config ./config/webpack.config.js --watch",
     "lint:style": "stylelint htdocs/src/scss/**/*.{css,scss,sass} -f verbose --config ./config/stylelintrc --output-file logs/report-lint.txt  || echo \"Lint has failed for some file(s).\"",
-    "load:server": "browser-sync start --config ./config/browser-sync.js",
-    "serve": "run-p compile:all load:server"
+    "load:server": "browser-sync start --config ./config/browser-sync.js --no-ui",
+    "serve": "run-p load:assets load:server"
   },
   "repository": {
     "type": "git",
@@ -18,6 +25,27 @@
   "sass": {
     "includePaths": [
       "./node_modules"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "debug": false
+        }
+      ]
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "IE 11"
+  ],
+  "targets": {
+    "browsers": [
+      "> 0.25%",
+      "> 0.25% in my stats"
     ]
   },
   "keywords": [
@@ -34,13 +62,24 @@
   },
   "homepage": "https://github.com/MarkCalderon/skelplate#readme",
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.2.1",
+    "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.13",
+    "chokidar-cli": "^2.1.0",
+    "cssnano": "^4.1.10",
+    "node-notifier-cli": "^1.2.1",
     "normalize.scss": "^0.1.0",
     "npm-run-all": "^4.1.5",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.32.4"
+    "sass": "^1.32.4",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
   },
   "devDependencies": {
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
   }

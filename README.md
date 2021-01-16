@@ -13,14 +13,9 @@ New developer, Tech hobbyist or Junior Developers striving to enter the competit
 ## Features
 - PUGjs
 - SCSS to CSS compiler
-- Browsersync with auto reload
-
-### TODO:
-- Build tree structure (Development to Production)
 - CSS Prefixer
-- ESLint
-- Beautifier
-- Environment specific configuration
+- Browsersync with auto reload
+- Build tree structure (Development to Production)
 
 
 ## Package used:
@@ -46,3 +41,31 @@ https://stylelint.io/
 6. browser-sync
 https://browsersync.io/
 - A tool used to have a local web server with ability for auto reload on changes.
+
+7. chokidar-cli
+https://www.npmjs.com/package/chokidar-cli
+- A tool that watches the file changes and executes commands.
+
+8. postcss
+https://github.com/postcss/postcss
+- A js plugin that transforms styling.
+
+9. autoprefixer
+https://www.npmjs.com/package/autoprefixer
+- A postcss plugin that adds the necessary fixes to support a range of browsers.
+
+10. cssnano
+https://github.com/cssnano/cssnano
+- A postcss plugin that minifies the css file.
+
+11. node-notifier-cli
+https://github.com/mikaelbr/node-notifier-cli
+- Adds a desktop notification status for builds.
+
+12. Babel-loader
+https://github.com/babel/babel-loader
+- It is a module used to process the js to support under the browserlist.
+
+
+13. @babel/core && @babel/preset-env
+- Core is the babel transpiler engine, while the present is the environment presets.

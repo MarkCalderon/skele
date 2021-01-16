@@ -6,4 +6,10 @@ browserSync.init({
     notify: false,
     server: "./htdocs/build/",
     browser: "chrome",
+    logLevel: "silent",
+    logSnippet: false,
+    logFileChanges: false,
+    ui: {
+        port: 3002,
+    }
 });
