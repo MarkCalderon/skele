@@ -1,0 +1,17 @@
+head
+    // Site Information
+    title #{page_title}
+    meta(charset="utf-8")
+    meta(name="description" content=`${page_description}`)
+
+    // OG Description
+    meta(name="og:title" content=`${page_og_title}`)
+    meta(name="og:type" content=`${page_og_type}`)
+    meta(name="og:url" content=`${page_og_url}`)
+    meta(name="og:url" content=`${page_og_image}`)
+
+    link(rel="apple-touch-icon" href="icon.png")
+    //- favicon.ico is automatically detected at root.
+
+    // Stylesheet
+    link(rel="stylesheet" href="./assets/css/style.css")

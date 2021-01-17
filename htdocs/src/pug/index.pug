@@ -1,11 +1,24 @@
+- const relative_path = '.'
+- const site_title = ' | SAMPLE SITE'
+- const site_lang = 'en'
+- const page_title = `Top` + `${site_title}`
+- const meta_title = `${page_title}`
+
+- const page_description = 'This is a bolterplate skeleton based site.'
+- const page_og_title = `${page_title}`
+- const page_og_type = "website"
+- const page_og_url = "https://www.website.com"
+- const page_og_image = "https://www.website.com/assets/image/common/ogp.png"
+
 doctype
-html(lang="en")
-    head
-        link(rel="stylesheet" href="./assets/css/style.css")
+html(lang=`${site_lang}`)
+    include inc/head.pug
     body
+        // Header
+        header
+        // Main
         main.topPage
             h1 testdd
             h3 test2
-    footer
-        small copyright testing 123
-        script(src="./assets/js/bundle.js")
+        // Footer
+    include inc/footer.pug

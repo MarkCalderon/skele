@@ -1,6 +1,12 @@
 
+htdocs/src/scss/style.scss
+ 3:1  ✖  Expected class name "topPage" to contain no uppercase letters.   plugin/stylelint-bem-namics
+ 4:3  ✖  Expected class name "topPage" to contain no uppercase letters.   plugin/stylelint-bem-namics
+
 1 source checked
  G:\Workspace\skelplate\htdocs\src\scss\style.scss
 
-0 problems found
+2 problems found
+ severity level "error": 2
+  plugin/stylelint-bem-namics: 2
 
